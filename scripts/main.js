@@ -132,21 +132,21 @@ let guest_list = {
 },
   ira: {
     persons: [
-    {name: "Ира", description: "Посчитает твои долги быстрее, чем ты успеешь моргнуть", photo: null}
+    {name: "Ира", description: "Посчитает твои долги 💸 быстрее, чем ты успеешь моргнуть👀", photo: "ira.jpg"}
   ],
-  title: "Same title"
+  title: "💓 Дорогая 💓"
 },
   yulya: {
     persons: [
-    {name: "Юля", description: "Быстро домчит тебя из точки А в точку Б, даже если ее об этом не просили", photo: null}
+    {name: "Юля", description: "❤️ Быстро домчит тебя из точки А в точку Б, даже если ее об этом не просили ❤️", photo: "yulya.jpg"}
   ],
-  title: "Same title"
+  title: "💓 Дорогая 💓"
 },
   dasha: {
     persons: [
-    {name: "Даша", description: "", photo: null}
+    {name: "Даша", description: "На 3-х языках 👅 может спеть любую песню Серёжи Лазарева 😍", photo: "dasha.jpg"}
   ],
-  title: "Same title"
+  title: "💓 Дорогая 💓"
 },
   boba: {
     persons: [
@@ -162,9 +162,9 @@ let guest_list = {
 },
   alina: {
     persons: [
-    {name: "Алина", description: "Подруга детства, объездила весь мир и не собирается останавливаться.", photo: null}
+    {name: "Алина", description: "Подруга детства, объездила весь мир 🌎 и не собирается останавливаться. 💃", photo: "alina.jpg"}
   ],
-  title: "Same title"
+  title: "💓 Дорогая 💓"
 },
   seva: {
     persons: [
@@ -180,13 +180,24 @@ let guest_list = {
 },
   cookies: {
     persons: [
-      {name: "Аня", description: "ышла замуж 👰🏼‍♀️ за Костю не подозревая, что он из Читы 🔪", photo: "anna_cookie.jpg"},
+      {name: "Аня", description: "Вышла замуж 👰🏼‍♀️ за Костю не подозревая, что он из Читы 🔪", photo: "anna_cookie.jpg"},
       {name: "Костя", description: "Беженец🏃🏻‍♂️ с Якутии женился на Ане ради работы 👷‍♂️", photo: "cookie.jpg"},
     ],
     title: "🍪 Сладкие кукисы 🍪"
   }
 };
 
+
+function getFooterTitle(count) {
+  let title = "Ждём";
+  if (count > 1) {
+    title = "Ждём вас"
+  } else {
+    title = "Ждём тебя"
+  }
+
+  return title;
+}
 
 function guestCount(list) {
   let counter = 2;
@@ -214,6 +225,11 @@ $(document).ready(function() {
     let meta = guest_list[params.guest]
     let guests = meta.persons;
     guest_title.html(meta.title);
+
+    let title = getFooterTitle(guests.length);
+
+    $('#footer-title').html(title);
+
     for (const guest in guests) {
       if (Object.hasOwnProperty.call(guests, guest)) {
         const element = guests[guest];
