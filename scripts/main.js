@@ -125,10 +125,10 @@ let guest_list = {
 },
   sisters: {
     persons: [
-    {name: "Маша", description: "", photo: null},
-    {name: "Катя", description: "", photo: null},
+    {name: "Маша", description: "Крутая учительница 👩🏻‍🏫 с замечательным плейлистом 🎼", photo: "Masha.jpg"},
+    {name: "Катя", description: "Верхом на коне 🐎, верхом по жизни 🤩", photo: "Kate.jpg"},
   ],
-  title: "Same title"
+  title: "🦊 Систрички лисички 🦊"
 },
   ira: {
     persons: [
